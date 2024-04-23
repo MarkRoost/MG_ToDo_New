@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <div>
+      <div routerLink="login">Login</div>
+      <div routerLink="register">Register</div>
+    </div>
+    <div>
+      <span>Logout</span>
+    </div>
 
     <router-outlet />
   `,
@@ -14,4 +20,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'MG_ToDo';
+
+  logout(){
+    console.log('Logout');
+  }
+
 }
